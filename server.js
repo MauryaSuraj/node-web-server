@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port =process.env.PORT || 3000;
 var app = express();
 //middleware
 //setting up the static page
@@ -19,7 +21,6 @@ app.use((req, res, next) => {
     }
   });
   console.log(log);
-
   next();
 });
 
@@ -70,6 +71,6 @@ app.get('/bad', (req, res) => {
   });
 });
 //message on the console
-app.listen(3000, () => {
-  console.log('server is running');
+app.listen(port, () => {
+  console.log(`server is up on the prot ${port} `);
 });
