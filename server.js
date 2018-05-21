@@ -64,6 +64,15 @@ app.get('/about', (req, res) => {
     // currentYear:new Date().getFullYear() //send to the about us page
   });
 });
+//porfolio page
+app.get('/portfolio',(req ,res)=>{
+  res.render('portfolio.hbs',{
+    pageTitle:'Portfolio',
+    portmsg:'Welcome to the portfolio page'
+  });
+});
+
+
 //  /bad - send back json with errormessage
 app.get('/bad', (req, res) => {
   res.send({
